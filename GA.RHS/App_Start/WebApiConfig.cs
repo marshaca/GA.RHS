@@ -13,6 +13,10 @@ namespace GA.RHS
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            var json = config.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            json.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
