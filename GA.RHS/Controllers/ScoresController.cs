@@ -10,16 +10,20 @@ namespace GA.RHS.Controllers
     public class ScoresController : ApiController
     {
         // GET: api/Scores
-        public IHttpActionResult Get()
+        [HttpGet]
+        [Route("Scores/full")]
+        public IHttpActionResult GetScores()
         {
             using (RHSEntities db = new RHSEntities())
             {
-                var scores = db.SP_GetScores().ToList();
+                List<SP_GetScores_Result> scores = db.SP_GetScores().ToList<SP_GetScores_Result>();
                 return Ok(scores);
             }
         }
 
         // GET: api/Scores/GetCityScores
+        [HttpGet]
+        [Route("Scores/city")]
         public IHttpActionResult GetCityScores()
         {
             using (RHSEntities db = new RHSEntities())
@@ -30,6 +34,8 @@ namespace GA.RHS.Controllers
         }
 
         // GET: api/Scores/GetRestaurentScores
+        [HttpGet]
+        [Route("Scores/restaurent")]
         public IHttpActionResult GetRestaurentScores()
         {
             using (RHSEntities db = new RHSEntities())
@@ -40,6 +46,8 @@ namespace GA.RHS.Controllers
         }
 
         // GET: api/Scores/GetZipScores
+        [HttpGet]
+        [Route("Scores/zip")]
         public IHttpActionResult GetZipScores()
         {
             using (RHSEntities db = new RHSEntities())
@@ -47,12 +55,6 @@ namespace GA.RHS.Controllers
                 var scores = db.SP_GetScoresByZip().ToList();
                 return Ok(scores);
             }
-        }
-
-        // GET: api/Scores/5
-        public string Get(int id)
-        {
-            return "value";
         }
 
         // POST: api/Scores

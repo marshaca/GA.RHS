@@ -13,10 +13,8 @@ namespace GA.RHS.EnityFramework
     
     public partial class SP_GetScores_Result
     {
-        public int id { get; set; }
         public int busid { get; set; }
         public System.DateTime ins_date { get; set; }
-        public string ins_score { get; set; }
         public string ins_grade { get; set; }
         public Nullable<int> score { get; set; }
         public string name { get; set; }
@@ -26,6 +24,7 @@ namespace GA.RHS.EnityFramework
         public int zip { get; set; }
         public decimal lat { get; set; }
         public decimal lng { get; set; }
-        public int ID1 { get; set; }
+        public string ins_Score { get; set; }
+        public int ID { get; set; }
     }
 }

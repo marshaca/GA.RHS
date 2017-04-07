@@ -623,10 +623,8 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
           <Property Type="Int32" Name="Avg_Score" Nullable="true" />
         </ComplexType>
         <ComplexType Name="SP_GetScores_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="Int32" Name="busid" Nullable="false" />
           <Property Type="DateTime" Name="ins_date" Nullable="false" />
-          <Property Type="String" Name="ins_score" Nullable="false" MaxLength="5" />
           <Property Type="String" Name="ins_grade" Nullable="false" MaxLength="5" />
           <Property Type="Int32" Name="score" Nullable="true" />
           <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
@@ -636,7 +634,8 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
           <Property Type="Int32" Name="zip" Nullable="false" />
           <Property Type="Decimal" Name="lat" Nullable="false" Precision="10" Scale="6" />
           <Property Type="Decimal" Name="lng" Nullable="false" Precision="10" Scale="6" />
-          <Property Type="Int32" Name="ID1" Nullable="false" />
+          <Property Type="String" Name="ins_Score" Nullable="false" MaxLength="5" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
         </ComplexType>
         <ComplexType Name="SP_GetScoresByZip_Result">
           <Property Type="Int32" Name="Zip" Nullable="false" />
@@ -884,10 +883,8 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
           <FunctionImportMapping FunctionImportName="SP_GetScores" FunctionName="RHSModel.Store.SP_GetScores">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RHSModel.SP_GetScores_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="busid" ColumnName="busid" />
                 <ScalarProperty Name="ins_date" ColumnName="ins_date" />
-                <ScalarProperty Name="ins_score" ColumnName="ins_score" />
                 <ScalarProperty Name="ins_grade" ColumnName="ins_grade" />
                 <ScalarProperty Name="score" ColumnName="score" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -897,7 +894,8 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
                 <ScalarProperty Name="zip" ColumnName="zip" />
                 <ScalarProperty Name="lat" ColumnName="lat" />
                 <ScalarProperty Name="lng" ColumnName="lng" />
-                <ScalarProperty Name="ID1" ColumnName="ID1" />
+                <ScalarProperty Name="ins_Score" ColumnName="ins_Score" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
