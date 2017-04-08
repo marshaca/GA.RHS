@@ -25,7 +25,13 @@
 
     <!-- Custom Fonts -->
     <link href="../Content/font-awesome.css" rel="stylesheet" type="text/css">
-
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="Node/systemjs.config.js"></script>
+    <script>
+      System.import('Node/main.js').catch(function(err){ console.error(err); });
+    </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -473,6 +479,8 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
+                            <h1>Hello, Angular App Here</h1>
+                            <my-app>Angualr App Loading..</my-app>
                             <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
                             <div class="pull-right">
                                 <div class="btn-group">
