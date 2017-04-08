@@ -397,7 +397,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../Scripts/sb-admin-2.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.j" ></script>
 </body>
 
 </html>
